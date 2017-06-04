@@ -22,5 +22,8 @@
 		"node": ">=6"
 	},
 	"dependencies": {
+		"get-scrollmax-y": "^1.0.0",
+		"global": "^4.3.2",
+		"raf": "^3.3.2"
 	}
 }
