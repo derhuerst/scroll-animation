@@ -1,0 +1,26 @@
+{
+	"name": "scroll-animation",
+	"description": "Animate elements based on the scroll position.",
+	"version": "0.1.0",
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"scroll",
+		"parallax",
+		"animate",
+		"animation",
+		"translate3d"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/scroll-animation",
+	"repository": "derhuerst/scroll-animation",
+	"bugs": "https://github.com/derhuerst/scroll-animation/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=6"
+	},
+	"dependencies": {
+	}
+}
