@@ -16,19 +16,20 @@ const animate = (animations) => {
 	let lastY = NaN
 	let calls = 0
 	const update = () => {
-		const y = window.pageYOffset
+		let y = window.pageYOffset
 		if (y === undefined) {
 			y = (document.documentElement || document.body.parentNode || document.body).scrollTop
 		}
 
 		if (y !== lastY) {
 			lastY = y
-			const p = y / getMaxY()
+			const maxY = getMaxY()
+			const p = y / maxY
 
 			for (let a of animations) {
-				if (p < a.from) a.fn(0)
-				else if (p > a.to) a.fn(1)
-				else a.fn((p - a.from) / (a.to - a.from))
+				if (p < a.from) a.fn(0, y, maxY)
+				else if (p > a.to) a.fn(1, y, maxY)
+				else a.fn((p - a.from) / (a.to - a.from), y, maxY)
 			}
 		}
 
