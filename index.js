@@ -5,7 +5,8 @@ const getMaxY = require('get-scrollmax-y')
 const window = require('global/window')
 
 const animate = (animations) => {
-	for (let a of animations) {
+	for (let i = 0; i < animations.length; i++) {
+		const a = animations[i]
 		if ('number' !== typeof a.from) a.from = 0
 		if ('number' !== typeof a.to) a.to = 1
 		if ('function' !== typeof a.fn) {
@@ -24,7 +25,7 @@ const animate = (animations) => {
 		if (y !== lastY) {
 			lastY = y
 			const maxY = getMaxY()
-			const p = y / maxY
+			const p = maxY > 0 ? y / maxY : 0
 
 			for (let a of animations) {
 				if (p < a.from) a.fn(0, y, maxY)
