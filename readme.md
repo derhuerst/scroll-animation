@@ -1,6 +1,6 @@
 # scroll-animation
 
-**Animate elements based on the scroll position.** Inspired by [rellax](https://github.com/dixonandmoe/rellax#rellax) and [`scroll-parallax`](https://github.com/GianlucaGuarini/parallax#why).
+**Animate elements based on the scroll position.** Inspired by [rellax](https://github.com/dixonandmoe/rellax#rellax) and [`scroll-parallax`](https://github.com/GianlucaGuarini/parallax#why). [demo](https://derhuerst.github.io/scroll-animation/)
 
 > Oh no, why another parallax script? Do we really need it?
 

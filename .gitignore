@@ -6,3 +6,5 @@ node_modules
 npm-debug.log
 
 dist
+docs/bundle.js
+docs/demo.es5.js

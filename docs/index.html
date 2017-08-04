@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+	<meta charset="utf-8"/>
+	<title>scroll-animation</title>
+	<meta name="description" content="Animate elements based on the scroll position."/>
+	<meta name="keywords" content="scroll, parallax, animate, animation, translate3d"/>
+	<meta name="author" content="Jannis R <mail@jannisr.de>"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<style>
+		body {
+			position: relative;
+			margin: 0; padding: 0;
+			min-height: 200%;
+			min-height: 200vh;
+			font-family: sans-serif;
+			/*todo: system sans-serif font*/
+			font-weight: 300;
+			font-size: 110%;
+			color: #333;
+			background-color: #fff;
+		}
+
+		h1, h2, p {
+			margin: 1rem 0;
+		}
+		h1 {
+			font-size: 300%;
+		}
+
+		a {
+			text-decoration: none;
+			color: #3498db;
+		}
+		a:hover, a:focus {
+			outline: none;
+			text-decoration: underline;
+		}
+
+		code {
+			font-size: 108%;
+		}
+
+		ul {
+			padding-left: 0;
+			list-style-position: inside;
+			list-style-type: '-';
+		}
+
+		.section {
+			position: absolute;
+			max-width: 60%;
+		}
+		#about {
+			top: 10rem;
+			left: 2rem;
+		}
+		#why {
+			top: 30rem;
+			right: 3rem;
+		}
+		#lorem-ipsum {
+			top: 50rem;
+			right: 7rem;
+		}
+		#footer {
+			top: 70rem;
+			right: 5rem;
+		}
+
+		#github {
+			display: inline-block;
+			margin-bottom: 1rem;
+		}
+		#github path {
+			fill: #000;
+		}
+		#github:hover path, #github:focus path {
+			fill: #555;
+		}
+
+		#coords label {
+			margin: 0 .5rem;
+			display: inline-block;
+		}
+
+		#demo {
+			position: relative;
+		}
+		#demo img {
+			width: 100%;
+		}
+
+		#footer .love {
+			position: relative;
+			top: .1em;
+			font-size: 120%;
+			color: #e74c3c;
+		}
+
+		.chip {
+			position: absolute;
+			transform: rotateZ(45deg);
+		}
+		.chip:nth-child(2n) {
+			background-color: #2ecc71;
+		}
+		.chip:nth-child(2n + 1) {
+			background-color: #16a085;
+		}
+		.chip:nth-child(4n) {
+			left: 10%;
+		}
+		.chip:nth-child(4n + 1) {
+			right: 10%;
+		}
+		.chip:nth-child(4n + 2) {
+			left: 35%;
+		}
+		.chip:nth-child(4n + 3) {
+			right: 35%;
+		}
+		.chip:nth-child(4n) {
+			width: 6rem;
+			height: 6rem;
+		}
+		.chip:nth-child(4n + 1) {
+			width: 5rem;
+			height: 5rem;
+		}
+		.chip:nth-child(4n + 2) {
+			width: 4rem;
+			height: 4rem;
+		}
+		.chip:nth-child(4n + 3) {
+			width: 3rem;
+			height: 3rem;
+		}
+		.chip:nth-child(1) {top: 10rem;}
+		.chip:nth-child(2) {top: 20rem;}
+		.chip:nth-child(3) {top: 30rem;}
+		.chip:nth-child(4) {top: 40rem;}
+		.chip:nth-child(5) {top: 50rem;}
+		.chip:nth-child(6) {top: 60rem;}
+		.chip:nth-child(7) {top: 70rem;}
+		.chip:nth-child(8) {top: 80rem;}
+		.chip:nth-child(9) {top: 90rem;}
+		.chip:nth-child(10) {top: 100rem;}
+		.chip:nth-child(11) {top: 110rem;}
+	</style>
+</head><body>
+	<div class="section" id="about">
+		<h1><code>scroll-animation</code></h1>
+		<p><strong>Animate elements based on the scroll position.</strong> <code>2k</code> minified &amp; gzipped.</p>
+		<!-- https://github.com/github/octicons/blob/0640e0c0e555a02e4628b96d5e72ef3328f27214/svg/mark-github.svg -->
+		<a id="github" href="https://github.com/derhuerst/scroll-animation">
+			<svg height="36" width="36" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+				<g transform="translate(1, 1)">
+					<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"/>
+				</g>
+			</svg>
+		</a>
+	</div>
+	<div class="section" id="why">
+		<h2>Why?</h2>
+		<p>I couldn't find an npm package that fit my needs:</p>
+		<ul>
+			<li>ability to animate any DOM property</li>
+			<li>using <code>requestAnimationFrame</code> for performace</li>
+			<li>suspending <code>requestAnimationFrame</code> after a while to minimize load</li>
+			<li>no <code>data-</code> attributes or special tags</li>
+		</ul>
+	</div>
+	<div class="section" id="lorem-ipsum">
+		<h2>Lorem Ipsum</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae pariatur, eos nobis officia labore quasi doloremque nostrum aliquid nulla molestiae.</p>
+	</div>
+	<footer id="footer" class="section">
+		<p><a href="https://github.com/derhuerst/scroll-animation"><abbr title="Free Open Source Software">FOSS</abbr></a> made with <span class="love">♥︎</span> by <a href="http://jannisr.de">@derhuerst</a>.</p>
+	</footer>
+	<div>
+		<div class="chip"></div>
+		<div class="chip"></div>
+		<div class="chip"></div>
+		<div class="chip"></div>
+		<div class="chip"></div>
+		<div class="chip"></div>
+		<div class="chip"></div>
+		<div class="chip"></div>
+		<div class="chip"></div>
+		<div class="chip"></div>
+		<div class="chip"></div>
+	</div>
+	<script src="bundle.js"></script>
+</body></html>
