@@ -30,13 +30,13 @@
 	},
 	"devDependencies": {
 		"babel-cli": "^6.24.1",
-		"babel-preset-es2015": "^6.24.1",
-		"browserify": "^14.4.0",
+		"babel-preset-env": "^1.7.0",
+		"browserify": "^16.2.2",
 		"uglify-es": "^3.0.27"
 	},
 	"scripts": {
-		"build": "babel index.js --presets es2015 -d dist",
-		"docs:transpile": "babel docs/demo.js --presets es2015 -o docs/demo.es5.js",
+		"build": "babel index.js --presets env -d dist",
+		"docs:transpile": "babel docs/demo.js --presets env -o docs/demo.es5.js",
 		"docs:bundle": "browserify docs/demo.es5.js | uglifyjs -mc >docs/bundle.js",
 		"docs": "npm run docs:transpile && npm run docs:bundle",
 		"prepublishOnly": "npm run build && npm run docs"
