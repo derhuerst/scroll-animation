@@ -3,6 +3,7 @@
 const requestAnimationFrame = require('raf')
 const getMaxY = require('get-scrollmax-y')
 const window = require('global/window')
+const document = require('global/document')
 
 const animate = (animations) => {
 	for (let i = 0; i < animations.length; i++) {
