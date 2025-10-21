@@ -1,7 +1,7 @@
 {
 	"name": "scroll-animation",
 	"description": "Animate elements based on the scroll position.",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"main": "./dist/index.js",
 	"module": "./index.js",
 	"files": [
@@ -31,7 +31,7 @@
 	"devDependencies": {
 		"babel-cli": "^6.24.1",
 		"babel-preset-env": "^1.7.0",
-		"browserify": "^16.2.2",
+		"browserify": "^17.0.1",
 		"uglify-es": "^3.0.27"
 	},
 	"scripts": {
