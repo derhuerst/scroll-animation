@@ -28,7 +28,7 @@ npm install scroll-animation
 ## Usage
 
 ```js
-const animate = require('scroll-animation')
+import {animateOnScroll} = require('scroll-animation')
 
 const el = document.querySelector('#el')
 const animateEl = (percentage) => {
@@ -36,7 +36,7 @@ const animateEl = (percentage) => {
 	el.style.opacity = 'scale(' + scale + ')'
 }
 
-animate([
+animateOnScroll([
 	{fn: animateEl, from: .4, to: .7}
 ])
 ```

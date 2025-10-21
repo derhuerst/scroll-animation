@@ -1,11 +1,9 @@
-'use strict'
+import requestAnimationFrame from 'raf'
+import getMaxY from 'get-scrollmax-y'
+import window from 'global/window.js'
+import document from 'global/document.js'
 
-const requestAnimationFrame = require('raf')
-const getMaxY = require('get-scrollmax-y')
-const window = require('global/window')
-const document = require('global/document')
-
-const animate = (animations) => {
+const animateOnScroll = (animations) => {
 	for (let i = 0; i < animations.length; i++) {
 		const a = animations[i]
 		if ('number' !== typeof a.from) a.from = 0
@@ -46,4 +44,6 @@ const animate = (animations) => {
 	requestAnimationFrame(update)
 }
 
-module.exports = animate
+export {
+	animateOnScroll,
+}

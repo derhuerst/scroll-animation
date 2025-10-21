@@ -1,6 +1,4 @@
-'use strict'
-
-const animate = require('../dist')
+import {animateOnScroll as animate} from '../index.js'
 
 const parallax = (el, i) => {
 	// const x = i % 2 === 0 ? 300 : 200

@@ -2,11 +2,10 @@
 	"name": "scroll-animation",
 	"description": "Animate elements based on the scroll position.",
 	"version": "0.2.2",
-	"main": "./dist/index.js",
+	"main": "./index.js",
 	"module": "./index.js",
 	"files": [
-		"index.js",
-		"dist"
+		"index.js"
 	],
 	"keywords": [
 		"scroll",
@@ -21,7 +20,7 @@
 	"bugs": "https://github.com/derhuerst/scroll-animation/issues",
 	"license": "ISC",
 	"engines": {
-		"node": ">=6"
+		"node": ">=22"
 	},
 	"dependencies": {
 		"get-scrollmax-y": "^1.0.0",
@@ -29,16 +28,10 @@
 		"raf": "^3.3.2"
 	},
 	"devDependencies": {
-		"babel-cli": "^6.24.1",
-		"babel-preset-env": "^1.7.0",
-		"browserify": "^17.0.1",
-		"uglify-es": "^3.0.27"
+		"esbuild": "^0.25.11"
 	},
 	"scripts": {
-		"build": "babel index.js --presets env -d dist",
-		"docs:transpile": "babel docs/demo.js --presets env -o docs/demo.es5.js",
-		"docs:bundle": "browserify docs/demo.es5.js | uglifyjs -mc >docs/bundle.js",
-		"docs": "npm run docs:transpile && npm run docs:bundle",
-		"prepublishOnly": "npm run build && npm run docs"
+		"docs": "esbuild --bundle --target=ios17 --minify --outfile=docs/bundle.js --sourcemap docs/demo.js",
+		"prepublishOnly": "npm run docs"
 	}
 }
