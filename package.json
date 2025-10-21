@@ -1,11 +1,12 @@
 {
 	"name": "scroll-animation",
 	"description": "Animate elements based on the scroll position.",
-	"version": "0.2.2",
+	"version": "1.0.0",
 	"main": "./index.js",
 	"module": "./index.js",
 	"files": [
-		"index.js"
+		"index.js",
+		"docs"
 	],
 	"keywords": [
 		"scroll",
