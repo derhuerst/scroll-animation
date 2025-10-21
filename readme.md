@@ -12,7 +12,6 @@ I couldn't find an npm package that fit my needs:
 - no `data-` attributes or special tags
 
 [![npm version](https://img.shields.io/npm/v/scroll-animation.svg)](https://www.npmjs.com/package/scroll-animation)
-[![build status](https://img.shields.io/travis/derhuerst/scroll-animation.svg)](https://travis-ci.org/derhuerst/scroll-animation)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/scroll-animation.svg)
 [![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
 [![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
